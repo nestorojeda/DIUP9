@@ -191,8 +191,6 @@ public class DataScreenUI extends javax.swing.JFrame {
                    
                    populateFieldList(query);
                    
-                   
-                   
                 }
                 
             } catch (SQLException ex) {

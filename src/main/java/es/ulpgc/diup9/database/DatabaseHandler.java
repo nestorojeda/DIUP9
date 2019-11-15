@@ -137,7 +137,7 @@ public final class DatabaseHandler {
                 ResultSet rs2 = md.getColumns(null, null, tableName, null);
                 while (rs2.next()) {
                     String field = rs2.getString("COLUMN_NAME");
-                    list.add(field);
+                    list.add(table +"."+ field);
                 }
             }
         }
