@@ -180,7 +180,7 @@ public class LoginScreenUI extends javax.swing.JFrame {
             if(status){
                 new DataScreenUI(dh, this);
             }else{
-                warningDialog("Datos de inicio de sesión incorrectos");
+                warningDialog(dh.getException());
             }
             
         } catch (SQLException | ClassNotFoundException ex) {

@@ -26,6 +26,8 @@ public final class DatabaseHandler {
     private String user;
     private boolean connected = false;
     
+    private SQLException exception;
+    
     public DatabaseHandler(String user){
         this.user = user;
     }
@@ -38,6 +40,7 @@ public final class DatabaseHandler {
             connected = true;
             return connected;
         }catch(SQLException e){
+            exception = e;
             return false;
         }
     }
@@ -143,6 +146,14 @@ public final class DatabaseHandler {
         }
         
         return list;
+    }
+
+    public boolean isConnected() {
+        return connected;
+    }
+
+    public String getException() {
+        return exception.toString();
     }
     
 }
